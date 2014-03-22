@@ -16,7 +16,8 @@ public class Application
 
 
 		// TODO: Load character screen, create/edit character
-
+        CharacterDesignerForm form = new CharacterDesignerForm();
+        form.setVisible(true);
 
 		//--- The map screen is a View of our game
 		//--- It's also our Controller when navigating the map

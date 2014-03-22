@@ -11,10 +11,4 @@ public class Player
 	{
 		super("player");
 	}
-
-	@Override
-	public void think()
-	{
-		//--- We don't think, the player thinks for us
-	}
 }

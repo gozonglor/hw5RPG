@@ -40,6 +40,10 @@ public class Map
 		}
 	}
 
+
+
+
+
 	public void loadMap(String mapName)
 	{
 		String terrainMapName = mapName + ".terrain.map";
@@ -60,6 +64,7 @@ public class Map
 			}
 		}
 	}
+
 
 	public int getWidth()
 	{
@@ -92,5 +97,21 @@ public class Map
 		}
 		return output;
 	}
-	//</editor-fold>
+
+    public void checkPassability(Map map){
+        String terrainMapName = "main" + ".terrain.map";
+        terrain = MapLoader.getMap(mapsDirectoryName + terrainMapName);
+        for (int x=0; x < map.getWidth(); x++){
+            //--- loop through the hashmap,NOTLOOPINGTHROUGHHASHMAP, for every key, find the matching key in the terrain map
+            for (int y=0; y < map.getHeight(); y++){
+                if (map.terrain[x][y].equals("^")){
+
+                }
+
+                if (map.items[x][y].equals("g")){
+                    map.terrain[x][y]=".";
+                }
+    }
+}
+    }
 }
