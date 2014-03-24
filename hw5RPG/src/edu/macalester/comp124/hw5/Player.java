@@ -9,6 +9,6 @@ public class Player
 {
 	public Player()
 	{
-		super("player");
+		super("player", 20);
 	}
 }

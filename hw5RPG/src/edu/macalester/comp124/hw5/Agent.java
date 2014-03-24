@@ -19,17 +19,29 @@ public class Agent
     public String name;
     public int health;
     public boolean isHumanControlled = false;
+    public int speed;
+    public int strength;
+    public char character;
 
     public List<Attack> attacks = new LinkedList<>();
 
-	public Agent(String type)
+	public Agent(String type, int health)
 	{
 		this.type = type;
+        this.health = health;
 	}
 
-    public String name()
+    public String getName()
     {
         return name;
+    }
+
+    public int getSpeed(){
+        return speed;
+    }
+
+    public int getStrength(){
+        return strength;
     }
 
 	/**
@@ -40,20 +52,47 @@ public class Agent
         //do something
     }
 
-    public void initialize(){
-        health = 20;
-        attacks.clear();
-        attacks.add(AttackMoves.getAttack("Slap"));
-        attacks.add(AttackMoves.getAttack("Haduken"));
-        attacks.add(AttackMoves.getAttack("Run"));
+    public void takeDamage(Attack attack){
+        health = health - attack.getDamage();
+
+        if (0 > health){
+            health = 0;
+        }
     }
 
+    public int initialize(){
+        health = 20;
+        attacks.clear();
+        attacks.add(AttackMoves.getAttack("Pepper Spray"));
+        attacks.add(AttackMoves.getAttack("Baton"));
+        attacks.add(AttackMoves.getAttack("Gun"));
+
+        return health;
+    }
+
+    //(1) Pepper Spray
+    //(2) Baton
+    //(3) Gun
+    //Returns selected attack
+
+    public Attack getAttack(){
+        for (int i=0; i < attacks.size(); i++){
+            System.out.println("(" + i + ")" + " " + attacks.get(i));
+        }
+        Scanner userInput = new Scanner(System.in);
+        int choice = userInput.nextInt();
+        Attack selectedAttack = attacks.get(choice);
+        return selectedAttack;
+         }
+    
     public Attack getAction(Agent monster){
        if (isHumanControlled)
            return getHumanAction(monster);
         else
            return getAIAction(monster);
     }
+
+
 
     protected Attack getAIAction(Agent monster){
         if (attacks.isEmpty()){
@@ -66,7 +105,7 @@ public class Agent
         return attacks.get(attackNumber);
     }
 
-    protected Attack getHumanAction(Agent monsterOrNPC){
+    protected Attack getHumanAction(Agent monster){
         System.out.println("Which attack do you want to use?" + "(0-" + (attacks.size()-1)+")");
         for (int i=0; i < attacks.size(); i++){
             Attack attack = attacks.get(i);
@@ -78,6 +117,7 @@ public class Agent
         Attack selectedAttack = attacks.get(choice);
         return selectedAttack;
     }
+
 
     public boolean hasFainted(){
         return (health <= 0);

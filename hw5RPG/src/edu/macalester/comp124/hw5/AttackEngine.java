@@ -7,25 +7,22 @@ import java.util.Random;
  */
 public class AttackEngine {
     private Random randomNumberGenerator = new Random();
+
     public void executeAttack(Agent player, Agent monster){
         System.out.println(player.name + "'s turn");
+        Attack attack = player.getAttack();
+        int damage = attack.getDamage();
 
-        Attack attack = player.getAction(monster);
-        int damage = calculateBaseDamage(attack);
+        if (monster.getSpeed() > player.getSpeed()){
 
-        //--- If the monsters speed is faster or equal to your speed,
-        //--- you have a higher chance of missing
+            System.out.println("Too late! The" + monster.getName() + "made a move first.");
+            attack = monster.getAIAction(monster);
+            damage = attack.getDamage();
+        }
 
-        //---
-        //---
-
+        player.takeDamage(damage);
 
 
     }
 
-    private int calculateBaseDamage(Attack attack){
-         int range = (attack.maxDamage - attack.minDamage + 1);
-         int damage = randomNumberGenerator.nextInt(range) + attack.minDamage;
-         return damage;
-    }
 }

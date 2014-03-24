@@ -10,25 +10,34 @@ public class AttackMoves {
     public static Attack getAttack(String attackName){
         Attack attack = new Attack();
 
-        if (attackName.equals("Slap")){
-            attack.name = "Slap";
-            attack.minDamage = 1;
-            attack.maxDamage = 2;
-            attack.actionDescription = "slaps";
+        if (attackName.equals("Baton")){
+            attack.name = "Baton";
+            attack.damage = 3;
+            attack.actionDescription = "beat the criminal with a baton!";
         }
 
-        else if (attackName.equals("Haduken")){
-            attack.name = "Haduken";
-            attack.minDamage = 12;
-            attack.maxDamage = 18;
-            attack.actionDescription = "blasted a huge amount of energy at";
+        else if (attackName.equals("Pepper Spray")){
+            attack.name = "Pepper Spray";
+            attack.damage = 3;
+            attack.actionDescription = "blasted a huge amount of pepper spray at the ";
         }
 
-        else if (attackName.equals("Run")){
-            attack.name = "Run";
-            attack.minDamage = 0;
-            attack.maxDamage = 0;
-            attack.actionDescription = "runs away from";
+        else if (attackName.equals("Gun")){
+            attack.name = "Gun";
+            attack.damage = 0;
+            attack.actionDescription = "shot ";
+        }
+
+        else if (attackName.equals("Super punch")){
+            attack.name = "Super punch";
+            attack.damage = 8;
+            attack.actionDescription = "used super punch!";
+        }
+
+        else if (attackName.equals("Golden tooth smile")){
+            attack.name = "Golden tooth smile";
+            attack.damage = 8;
+            attack.actionDescription = "flashed a golden tooth smile!";
         }
 
         return attack;

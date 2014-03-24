@@ -17,19 +17,20 @@ public class Game
 	//--- We need to know this so we know who to draw and so that we can ask
 	//---	each turn what they want to do
 	public List<Agent> agents = new LinkedList<>();
-    public List<Agent> monsters = new LinkedList<>();
+    public List<Agent> criminals = new LinkedList<>();
     public List<Agent> ncp = new LinkedList<>();
     String mapsDirectoryName = "hw5RPG/maps/";
 
     public void fillMonsters(){
-        monsters.add(new Agent(mapsDirectoryName + "actor.png"));
-        monsters.add(new Agent(mapsDirectoryName + "actor.png"));
+        ncp.add(new Agent(mapsDirectoryName + "actor.png", 20));//Gangsters
+        ncp.add(new Agent(mapsDirectoryName + "actor.png", 20));//Pimps
+        ncp.add(new Agent(mapsDirectoryName + "actor.png", 20));//Robbers
     }
 
     public void fillNCP(){
-        ncp.add(new Agent(mapsDirectoryName + "actor.png"));//Your mom
-        ncp.add(new Agent(mapsDirectoryName + "actor.png"));//Your little brother
-        ncp.add(new Agent(mapsDirectoryName + "actor.png"));//The astronaut
+        ncp.add(new Agent(mapsDirectoryName + "actor.png", 20));//Your mom
+        ncp.add(new Agent(mapsDirectoryName + "actor.png", 20));//Your little brother
+        ncp.add(new Agent(mapsDirectoryName + "actor.png", 20));//The astronaut
     }
 
 	public Game()
@@ -101,8 +102,8 @@ public class Game
 	{
 		//--- Who did you run into?
         Random randomizer = new Random();
-        int randomIndex = randomizer.nextInt(monsters.size());
-        monsters.get(randomIndex);
+        int randomIndex = randomizer.nextInt(criminals.size());
+        criminals.get(randomIndex);
 
 		//--- Time to fight
         Window fightWindow = new Window();

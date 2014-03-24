@@ -6,7 +6,7 @@
 # You can also use this file to load images not used for terrain tiles
 
 # Actors (player, monsters, etc.)
-player , player.png
+player , hungrycop.gif
 f , figment.png
 
 # Items
@@ -14,7 +14,7 @@ g , gold.png
 m , floor.png
 
 # Terrain (grass, trees, castles, etc.)
-. , floor.png
+. , cement.png
 l , lava.png
 ^ , mountain.png
 T , tree.png
