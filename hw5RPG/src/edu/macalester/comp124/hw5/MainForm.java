@@ -200,9 +200,12 @@ public class MainForm extends javax.swing.JFrame
 
 	private void drawAgents()
 	{
-		for (Agent agent : game.agents)
+
+        for (Agent agent : game.agents)
 		{
-			Image image = scaledImages.get(agent.type);
+
+            Image image = scaledImages.get(agent.type);
+
 			backBuffer.drawImage(image,
 					agent.x*tileWidth, agent.y*tileHeight,
 					null);
@@ -258,7 +261,7 @@ public class MainForm extends javax.swing.JFrame
         drawingPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("1902 PokeExample");
+        setTitle("NYPD Donut Hunt");
 
         drawingPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 

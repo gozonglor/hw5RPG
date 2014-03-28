@@ -6,23 +6,30 @@
 # You can also use this file to load images not used for terrain tiles
 
 # Actors (player, monsters, etc.)
-player , hungrycop.gif
-f , figment.png
+player , actor.png
+pimp , pimp.png
+robber, robber.png
+gangster , gangster.png
 
 # Items
 g , gold.png
-m , floor.png
+*, transparency.png
 
 # Terrain (grass, trees, castles, etc.)
-. , cement.png
+. , grass.png
 l , lava.png
 ^ , mountain.png
 T , tree.png
 ~ , water.png
+D , Dunkin-Donuts.png
+r , Roadline.png
+s , streetlight.png
+d , Donut.png
+c , coffee.png
+v , car.png
+n , brick.png
 o , white.png , A white square. Use if nothing is at that spot.
--, grass.png
 
 # Misc
 background yellow , background yellow.png
 background white  , background.png
-

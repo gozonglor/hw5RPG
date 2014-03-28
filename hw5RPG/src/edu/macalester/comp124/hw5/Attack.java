@@ -9,6 +9,12 @@ public class Attack {
         public String name = "";
         public String actionDescription = "attacks";
 
+    public Attack (String name, int damage, String actionDescription){
+        this.name = name;
+        this.damage = damage;
+        this.actionDescription = actionDescription;
+    }
+
     public int getDamage(){
         return damage;
     }

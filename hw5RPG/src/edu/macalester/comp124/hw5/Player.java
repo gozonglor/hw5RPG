@@ -9,6 +9,8 @@ public class Player
 {
 	public Player()
 	{
-		super("player", 20);
+		super("player", "customizable name",20,'u');
 	}
+
+
 }

@@ -13,7 +13,7 @@ public class Map
 
 	//--- Keep track of which types of terrain we can/cannot walk on
 	//--- Technically, we're only tracking what we CAN'T walk on right now
-	private HashMap<String,Boolean> passibility = new HashMap<>();
+	public HashMap<String,Boolean> passibility = new HashMap<>();
 
 	//<editor-fold defaultstate="collapsed" desc="constructors and accessors">
 	public Map(String mapName)
