@@ -425,6 +425,8 @@ public class Game {
         Attack attack = getAction(attacker);
 
         if (attack.getName().equals("Pepper Spray")){
+            int damage = attack.damage;
+            target.takeDamage(damage);
             System.out.println("\n" +
                     "  " + attacker.getName() + " " +
                     attack.actionDescription    +
@@ -432,9 +434,10 @@ public class Game {
                     " points of damage. " +
                     target.health + "hp remaining.\n");
 
-            System.out.println(target.getName() + " has been blinded momentarily!");
-            getHumanAction();
+            System.out.println(target.getName() + " has been blinded momentarily!\n");
+            attack = getAction(attacker);
         }
+
 
         System.out.println(attacker.getName() + "'s turn");
         int damage = attack.damage;
@@ -469,6 +472,18 @@ public class Game {
                     System.out.println(player.getName() + " has fainted!");
                     System.out.println("You lose");
                     matchOver = true;
+                    System.out.println("");
+
+                    System.out.println("Do you want to play again? (y/n)");
+                    Scanner userInput = new Scanner(System.in);
+                    String choice = userInput.nextLine();
+                    if (choice.equals("y")){
+                        Game game = new Game();
+                    }
+                    else{
+                        System.out.println("Bye!");
+                        System.exit(0);
+                    }
                 }
             }
         }
